@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/cyborg/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="author" content="Fabio Scagliola">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+    <script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
+    <script src="js/step.js"></script>
+    <script>
+        $(function () {
+            step.play();
+            $(document).on('click', '.play', function () {
+                //$('.alert').addClass('hidden');
+                location.reload();
+            });
+        });
+        function consoleLog(message) {
+            console.log(message);
+            $('#consolle').append('\r\n' + message);
+        }
+    </script>
+    <title>Step</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row flex-lg-row align-items-center g-5 py-5">
+            <div class="col">
+                <h1>Step 0.1.0</h1>
+                <blockquote class="blockquote">
+                    <p>&copy; 2016 Fabio Scagliola. All rights reserved. Design and development by <a href="https://fabioscagliola.com" target="_blank">Fabio Scagliola</a></p>
+                </blockquote>
+            </div>
+        </div>
+        <div class="container">
+            <p>Step is a video game, currently under development, inspired by <a href="https://en.wikipedia.org/wiki/The_Long_Earth" target="_blank">The Long Earth</a>, the first novel in a collaborative science fiction series by Terry Pratchett and Stephen Baxter.</p>
+            <p>The purpose of the game is to help Joshua reach his goal by avoiding the obstacles; the only action that Joshua can take is a <em>step</em> into another earth; this beta includes three earths only (Datum Earth, East 1, and West 1), but a variety of earths will be a key feature of the final version of the game.</p>
+            <p>A keyboard is required to control this beta, which is therefore not yet suitable for mobile devices.</p>
+            <p>Press <code>W</code> to step westward, <code>E</code> to step eastward, and <code>P</code> to toggle the pause.</p>
+            <canvas class="center-block" id="canvas" style="padding: 20px; width: 100%; height: auto;" width="667" height="375"></canvas>
+            <pre id="temp"></pre>
+            <div class="alert alert-danger hidden">Game over! <a class="alert-link play" href="#canvas">Play again</a></div>
+            <div class="alert alert-info hidden">Game paused</div>
+            <div class="alert alert-success hidden">You won! <a class="alert-link play" href="#canvas">Play again</a></div>
+            <div class="alert alert-warning hidden">Joshua cannot step: he's at long earth's end</div>
+            <pre id="consolle">Step 0.1.0 loaded</pre>
+        </div>
+    </div>
+</body>
+</html>
